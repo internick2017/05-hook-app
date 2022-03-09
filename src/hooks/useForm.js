@@ -4,6 +4,12 @@ export const useForm = (initialState = {}) => {
 
     const [values, setvalues] = useState(initialState)
 
+    const reset = () => {
+
+        setvalues(initialState)
+
+    }
+
 
     const handleInputEvent = ({ target }) => {
         setvalues({
@@ -12,5 +18,5 @@ export const useForm = (initialState = {}) => {
         });
     }
 
-    return [values, handleInputEvent];
+    return [values, handleInputEvent, reset];
 }
